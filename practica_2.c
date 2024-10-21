@@ -32,12 +32,12 @@ for( i = 0; i < N; i++ ){
 void PrintVect( float vect[N], int from, int numel ){
     int i;
     if (from < 0 || from >= N){
-        printf("Error, aquest valor no és valid.\n");
+        printf("Error: aquest valor no és valid.\n");
         return;
     }
     
     if (numel <= 0){
-        printf("Error, aquest valor no és valid.\n");
+        printf("Error: aquest valor no és valid.\n");
         return;
     }
 
@@ -48,9 +48,76 @@ void PrintVect( float vect[N], int from, int numel ){
 }
 
 
+//SEGON PROBLEMA
+void PrintRow( float mat[N][N], int row, int from, int numel ){
+    int i;
+    if (row < 0 || row >= N) {
+        printf("Error: fila fora de límits.\n");
+        return;
+    }
+
+    if (from < 0 || from >= N) {
+        printf("Error: Posició inicial fora de límits.\n");
+        return;
+    }
+
+    if (numel <= 0) {
+        printf("Error: aquest valor no és valid.\n");
+        return;    
+    }
+    
+    for (i = from; i < from + numel && i < N; i++) {
+        printf("%f ", mat[row][i]);
+    }
+    printf("\n");
+
+}
+
+
+//FUNCIÓ PRINCIPAL MAIN
 int main(){
 
-void PrintVect();
+InitData();
 
+//PRINT PROBLEMA 1
+printf("  ___ ___  ___  ___ _    ___ __  __   _     _ \n");
+printf(" | _ \\ _ \\/ _ \\| _ ) |  | __|  \\/  | /_\\   / |\n");
+printf(" |  _/   / (_) | _ \\ |__| _|| |\\/| |/ _ \\  | |\n");
+printf(" |_| |_|_\\\\___/|___/____|___|_|  |_/_/ \\_\\ |_|\n");
+printf("                                             \n");
+
+printf("V1 del 0 al 9 i del 256 al 265:\n");
+PrintVect(V1, 0, 10);
+PrintVect(V1, 256, 266);
+printf("\n");
+printf("\n");
+
+printf("V2 del 0 al 9 i del 256 al 265:\n");
+PrintVect(V2, 0, 10);
+PrintVect(V2, 256, 266);
+printf("\n");
+printf("\n");
+
+printf("V3 del 0 al 9 i del 256 al 265:\n");
+PrintVect(V3, 0, 10);
+PrintVect(V3, 256, 266);
+printf("\n");
+printf("\n");
+
+
+//PRINT PROBLEMA 2
+printf("  ___ ___  ___  ___ _    ___ __  __   _     ___ \n");
+printf(" | _ \\ _ \\/ _ \\| _ ) |  | __|  \\/  | /_\\   |_  )\n");
+printf(" |  _/   / (_) | _ \\ |__| _|| |\\/| |/ _ \\   / / \n");
+printf(" |_| |_|_\\\\___/|___/____|___|_|  |_/_/ \\_\\ /___|\n");
+printf("                                               \n");
+
+printf("Elements de la fila 0 de la matriu (índexs 0 al 9):\n");
+PrintRow(Mat, 0, 0, 10);
+printf("\n");
+
+printf("Elements de la fila 100 de la matriu (índexs 0 al 9):\n");
+PrintRow(Mat, 100, 0, 10);
+printf("\n");
 
 }
