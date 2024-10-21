@@ -29,7 +29,7 @@ for( i = 0; i < N; i++ ){
 }
 
 //PRIMER PROBLEMA
-void PrintVect( float vect[N], int from, int numel ){
+void PrintVect(float vect[N], int from, int numel){
     int i;
     if (from < 0 || from >= N){
         printf("Error: aquest valor no és valid.\n");
@@ -49,7 +49,7 @@ void PrintVect( float vect[N], int from, int numel ){
 
 
 //SEGON PROBLEMA
-void PrintRow( float mat[N][N], int row, int from, int numel ){
+void PrintRow(float mat[N][N], int row, int from, int numel){
     int i;
     if (row < 0 || row >= N) {
         printf("Error: fila fora de límits.\n");
@@ -70,8 +70,20 @@ void PrintRow( float mat[N][N], int row, int from, int numel ){
         printf("%f ", mat[row][i]);
     }
     printf("\n");
+}
+
+//TERCER PROBLEMA
+void MultEscalar(float vect[N], float vectres[N], float alfa){
+    for (int i = 0; i < N; i++) {
+        vectres[i] = alfa * vect[i];
+    }
+}
+
+//QUART PROBLEMA
+float Scalar(float vect1[N], float vect2[N]){
 
 }
+
 
 
 //FUNCIÓ PRINCIPAL MAIN
@@ -119,5 +131,15 @@ printf("\n");
 printf("Elements de la fila 100 de la matriu (índexs 0 al 9):\n");
 PrintRow(Mat, 100, 0, 10);
 printf("\n");
+
+
+//PRINT PROBLEMA 3
+printf("  ___ ___  ___  ___ _    ___ __  __   _     ____ \n");
+printf(" | _ \\ _ \\/ _ \\| _ ) |  | __|  \\/  | /_\\   |__ / \n");
+printf(" |  _/   / (_) | _ \\ |__| _|| |\\/| |/ _ \\   |_ \\ \n");
+printf(" |_| |_|_\\\\___/|___/____|___|_|  |_/_/ \\_\\ |___/ \n");
+printf("                                               \n");
+
+
 
 }
