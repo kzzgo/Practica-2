@@ -1,7 +1,9 @@
 //practica 2
 #include <stdio.h>
+#include <stdlib.h>
+#define N 512
 
-const N = 512;
+
 float Mat[N][N];
 float MatDD[N][N];
 float V1[N], V2[N], V3[N], V4[N];
@@ -26,6 +28,29 @@ for( i = 0; i < N; i++ ){
 }
 }
 
+//PRIMER PROBLEMA
 void PrintVect( float vect[N], int from, int numel ){
+    int i;
+    if (from < 0 || from >= N){
+        printf("Error, aquest valor no és valid.\n");
+        return;
+    }
+    
+    if (numel <= 0){
+        printf("Error, aquest valor no és valid.\n");
+        return;
+    }
+
+    for (i = from; i < from + numel && i < N; i++){
+        printf("%f ", vect[i]);
+    }
+    printf("\n");
+}
+
+
+int main(){
+
+void PrintVect();
+
 
 }
