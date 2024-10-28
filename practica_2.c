@@ -146,3 +146,29 @@ printf("                                               \n");
 
 
 }
+//PROBLEMA 4
+float Scalar( float vect1[N], float vect2[N] ){
+    float resultat = 0.0 ;
+    for (int i = 0; i < N; i++) {
+        resultat += vect1[i] * vect2[i];
+        return resultat;
+    }       
+}
+//Problema 5
+float Magnitude( float vect[N] ){
+    float resultat;
+    resultat = sqrt(Scalar(vect,vect));
+    return resultat;
+}
+//Problema 6
+int Ortogonal( float vect1[N], float vect2[N] ){
+    float resultat;
+    resultat = Scalar(vect1,vect2);
+    if (resultat != 0)
+        return  0;
+    else
+        return 1;
+}
+
+//Problema 7
+void Projection( float vect1[N], float vect2[N], float vectres[N] );
