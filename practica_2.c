@@ -28,7 +28,7 @@ for( i = 0; i < N; i++ ){
 }
 }
 
-//PRIMER PROBLEMA
+//PRIMERA FUNCIO
 void PrintVect(float vect[N], int from, int numel){
     int i;
     if (from < 0 || from >= N){
@@ -44,11 +44,12 @@ void PrintVect(float vect[N], int from, int numel){
     for (i = from; i < from + numel && i < N; i++){
         printf("%f ", vect[i]);
     }
+
     printf("\n");
 }
 
 
-//SEGON PROBLEMA
+//SEGONA FUNCIO
 void PrintRow(float mat[N][N], int row, int from, int numel){
     int i;
     if (row < 0 || row >= N) {
@@ -72,14 +73,14 @@ void PrintRow(float mat[N][N], int row, int from, int numel){
     printf("\n");
 }
 
-//TERCER PROBLEMA
+//TERCERA FUNCIO
 void MultEscalar(float vect[N], float vectres[N], float alfa){
     for (int i = 0; i < N; i++) {
         vectres[i] = alfa * vect[i];
     }
 }
 
-//QUART PROBLEMA
+//QUARTA FUNCIO
 float Scalar(float vect1[N], float vect2[N]){
 
 }
@@ -91,13 +92,14 @@ int main(){
 
 InitData();
 
-//PRINT PROBLEMA 1
+//PRINT FUNCIO 1
 printf("  ___ ___  ___  ___ _    ___ __  __   _     _ \n");
 printf(" | _ \\ _ \\/ _ \\| _ ) |  | __|  \\/  | /_\\   / |\n");
 printf(" |  _/   / (_) | _ \\ |__| _|| |\\/| |/ _ \\  | |\n");
 printf(" |_| |_|_\\\\___/|___/____|___|_|  |_/_/ \\_\\ |_|\n");
 printf("                                             \n");
 
+printf("A. Els elements 0 al 9 i 256 al 265 dels vectors V1, V2 i V3.\n\n");
 printf("V1 del 0 al 9 i del 256 al 265:\n");
 PrintVect(V1, 0, 10);
 PrintVect(V1, 256, 266);
@@ -117,7 +119,7 @@ printf("\n");
 printf("\n");
 
 
-//PRINT PROBLEMA 2
+//PRINT FUNCIO 2
 printf("  ___ ___  ___  ___ _    ___ __  __   _     ___ \n");
 printf(" | _ \\ _ \\/ _ \\| _ ) |  | __|  \\/  | /_\\   |_  )\n");
 printf(" |  _/   / (_) | _ \\ |__| _|| |\\/| |/ _ \\   / / \n");
@@ -133,12 +135,13 @@ PrintRow(Mat, 100, 0, 10);
 printf("\n");
 
 
-//PRINT PROBLEMA 3
+//PRINT FUNCIO 3
 printf("  ___ ___  ___  ___ _    ___ __  __   _     ____ \n");
 printf(" | _ \\ _ \\/ _ \\| _ ) |  | __|  \\/  | /_\\   |__ / \n");
 printf(" |  _/   / (_) | _ \\ |__| _|| |\\/| |/ _ \\   |_ \\ \n");
 printf(" |_| |_|_\\\\___/|___/____|___|_|  |_/_/ \\_\\ |___/ \n");
 printf("                                               \n");
+
 
 
 
