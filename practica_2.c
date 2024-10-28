@@ -1,6 +1,7 @@
 //practica 2
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #define N 512
 
 
@@ -81,7 +82,51 @@ void MultEscalar(float vect[N], float vectres[N], float alfa){
 }
 
 //QUARTA FUNCIO
-float Scalar(float vect1[N], float vect2[N]){
+float Scalar( float vect1[N], float vect2[N] ){
+    float resultat = 0.0 ;
+    for (int i = 0; i < N; i++) {
+        resultat += vect1[i] * vect2[i];
+        return resultat;
+    }       
+}
+
+//QUINTA FUNCIO
+float Magnitude( float vect[N] ){
+    float resultat;
+    resultat = sqrt(Scalar(vect,vect));
+    return resultat;
+}
+
+//SISENA FUNCIO
+int Ortogonal( float vect1[N], float vect2[N] ){
+    float resultat;
+    resultat = Scalar(vect1,vect2);
+    if (resultat != 0)
+        return  0;
+    else
+        return 1;
+}
+
+//SETENA FUNCIO
+void Projection( float vect1[N], float vect2[N], float vectres[N] );
+MultEscalar(float vect1, float vectres,float((Scalar(vect1,vect2)/(Magnitude(vect2)))));
+
+return vectres;
+
+
+//VUITENA FUNCIO
+float Infininorm( float M[N][N] ){
+    float suma_max = 0;
+    for (int i = 0; i < N; i++){
+        float suma_fila = 0;
+        for (int j = 0; j < N; i++){
+            suma_fila += fabs(M[i][j]);
+        }
+        if (suma_fila > suma_max){
+            suma_fila = suma_max;
+        }
+    }
+    
 
 }
 
@@ -146,29 +191,3 @@ printf("                                               \n");
 
 
 }
-//PROBLEMA 4
-float Scalar( float vect1[N], float vect2[N] ){
-    float resultat = 0.0 ;
-    for (int i = 0; i < N; i++) {
-        resultat += vect1[i] * vect2[i];
-        return resultat;
-    }       
-}
-//Problema 5
-float Magnitude( float vect[N] ){
-    float resultat;
-    resultat = sqrt(Scalar(vect,vect));
-    return resultat;
-}
-//Problema 6
-int Ortogonal( float vect1[N], float vect2[N] ){
-    float resultat;
-    resultat = Scalar(vect1,vect2);
-    if (resultat != 0)
-        return  0;
-    else
-        return 1;
-}
-
-//Problema 7
-void Projection( float vect1[N], float vect2[N], float vectres[N] );
