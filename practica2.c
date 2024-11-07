@@ -125,7 +125,7 @@ float Infininorm( float M[N][N] ){
             suma_fila = suma_max;
         }
     }
-    return suma_max
+    return suma_max;
 }
 
 //NOVENA FUNCIO
@@ -140,29 +140,31 @@ float Onenorm( float M[N][N] ){
             suma_columna = suma_max;
         }
     }
-    return suma_max
+    return suma_max;
 }
 //DESENA FUNCIO
 float NormFrobenius( float M[N][N]){
-    float frob = 0.0
+    float frob = 0.0;
     for (int i = 0; i < N; i++) 
         for (int j = 0; j < N; j++)
-            frob += abs((M[i][j])*M[i][j])
-    frob = sqrt(frob)
+            frob += fabsf((M[i][j])*M[i][j]);
+    frob = sqrt(frob);
 }
 //ONZENA FUNCIO
-int DiagonalDom(float M[N][N])
-float element_diagonal
-float sum_altres
+int DiagonalDom(float M[N][N]){
+int i, j;
+float element_diagonal;
+float sum_altres;
     for (int i = 0; i < N; i++)
-        element_diagonal = abs(M[i][i])
+        element_diagonal = fabsf(M[i][i]);
         for (int j = 0; j < N; j++)
-            if (j != i);{
-                sum_altres += abs(M[i][j])
+            if (j != i){
+                sum_altres += fabsf(M[i][j]);
             }
     if (element_diagonal < sum_altres){
-    return 0
-return 1
+    return 0;
+return 1;
+}
 }
 
 
