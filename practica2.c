@@ -165,6 +165,49 @@ float sum_altres
 return 1
 }
 
+
+//DOTZENA FUNCIO
+void Matriu_x_Vector( float M[N][N], float vect[N], float vectres[N] ){
+    int i, j;
+    for (i = 0; i < N; i++) {
+        vectres[i] = 0;
+        for (j = 0; j < N; j++) {
+            vectres[i] += M[i][j] * vect[j];
+        }
+    }
+}
+
+
+//TRETZENA FUNCIO
+int Jacobi( float M[N][N] , float vect[N], float vectres[N], unsigned iter ){
+    if (!DiagonalDom(M)) {
+        return 0;
+    }
+
+    float x[N] = {0};
+    float temp[N];
+    int k, i, j;
+
+    for (k = 0; k < iter; k++) {
+        for (i = 0; i < N; i++) {
+            temp[i] = vect[i];
+            for (j = 0; j < N; j++) {
+                if (j != i) temp[i] -= M[i][j] * x[j];
+            }
+            temp[i] /= M[i][i];
+        }
+        for (i = 0; i < N; i++) {
+            x[i] = temp[i];
+        }
+    }
+    
+    for (i = 0; i < N; i++) {
+        vectres[i] = x[i];
+    }
+    return 1;
+}
+
+
 //FUNCIÓ PRINCIPAL MAIN
 int main(){
 
